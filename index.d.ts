@@ -268,6 +268,18 @@ export class RoaringBitmap32 implements Set<number> {
   ): void;
 
   /**
+   * Deserializes a frozen view of the bitmap from an Uint8Array or a Buffer.
+   *
+   * Returns a new RoaringBitmap32 instance.
+   *
+   * @static
+   * @param {Uint8Array} serialized An Uint8Array or a node Buffer that contains the frozen serialized data.
+   * @returns {RoaringBitmap32} A new RoaringBitmap32 instance.
+   * @memberof RoaringBitmap32
+   */
+  public static frozenView(serialized: Uint8Array): RoaringBitmap32;
+
+  /**
    * Swaps the content of two RoaringBitmap32 instances.
    *
    * @static
@@ -953,6 +965,22 @@ export class RoaringBitmap32 implements Set<number> {
    * @memberof RoaringBitmap32
    */
   public clone(): RoaringBitmap32;
+
+  /**
+   * How many bytes are required to frozen serialize this bitmap.
+   *
+   * @returns {number} How many bytes are required to serialize this bitmap.
+   * @memberof RoaringBitmap32
+   */
+  public getFrozenSizeInBytes(): number;
+
+  /**
+   * Serializes a frozen view of the bitmap into a new Buffer.
+   *
+   * @returns {Buffer} A new node Buffer that contains the serialized bitmap.
+   * @memberof RoaringBitmap32
+   */
+  public frozenSerialize(): Buffer;
 
   /**
    * Returns always "RoaringBitmap32".

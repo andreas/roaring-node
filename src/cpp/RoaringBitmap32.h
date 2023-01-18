@@ -87,11 +87,14 @@ class RoaringBitmap32 final {
   static void toSet(const v8::FunctionCallbackInfo<v8::Value> & info);
   static void getSerializationSizeInBytes(const v8::FunctionCallbackInfo<v8::Value> & info);
   static void serialize(const v8::FunctionCallbackInfo<v8::Value> & info);
+  static void getFrozenSizeInBytes(const v8::FunctionCallbackInfo<v8::Value> & info);
+  static void frozenSerialize(const v8::FunctionCallbackInfo<v8::Value> & info);
 
   static void deserialize(const v8::FunctionCallbackInfo<v8::Value> & info);
   static void deserializeStatic(const v8::FunctionCallbackInfo<v8::Value> & info);
   static void deserializeStaticAsync(const v8::FunctionCallbackInfo<v8::Value> & info);
   static void deserializeParallelStaticAsync(const v8::FunctionCallbackInfo<v8::Value> & info);
+  static void frozenViewStatic(const v8::FunctionCallbackInfo<v8::Value> & info);
 
   static void fromArrayStaticAsync(const v8::FunctionCallbackInfo<v8::Value> & info);
 
